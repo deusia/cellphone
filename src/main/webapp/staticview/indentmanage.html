@@ -1,0 +1,660 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <title>index</title>
+</head>
+<body>
+<div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">手机销售管理系统</a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="#">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdown" role="button">
+                            其他界面
+                        </a>
+                        <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">管理</a></li>
+                            <li><a class="dropdown-item" href="#">查询</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">关于我们</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="d-flex">
+                    <form action="login.html">
+                        <button class="btn btn-outline-danger" id="sign-out" type="submit">退出登录</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-3" id="sidebar">
+
+            <div class="list-group" id="lists">
+                <a href="infomanage.html" class="list-group-item list-group-item-action" aria-current="true">
+                    手机信息管理
+                </a>
+                <a href="vipmanamge.html" class="list-group-item list-group-item-action">
+                    会员管理
+                </a>
+                <a href="brandmanage.html" class="list-group-item list-group-item-action">
+                    手机品牌管理
+                </a>
+                <a href="stockmanage.html" class="list-group-item list-group-item-action">
+                    手机数量管理
+                </a>
+                <a href="indentmanage.html" class="list-group-item list-group-item-action active">
+                    订单管理
+                </a>
+            </div>
+        </div>
+        <div class="col-9" id="content">
+            <div class="row">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="home-tab" data-bs-toggle="tab" data-bs-target="#queryIndent"
+                                type="button" role="tab" aria-controls="home" aria-selected="true">订单查询
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#allIndent"
+                                type="button" role="tab" aria-controls="profile" aria-selected="false">所有订单
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+
+                    <div class="tab-pane fade show active" id="queryIndent" role="tabpanel" aria-labelledby="home-tab">
+                        <form class="row row-cols-3 align-items-center" id="form-search">
+
+                            <div class="col-2">
+                                <label class="visually-hidden" for="inlineFormSelectPref">检索条件</label>
+                                <select class="form-select" id="inlineFormSelectPref">
+                                    <option selected>请选择...</option>
+                                    <option value="1">订单号</option>
+                                    <option value="2">日期</option>
+                                    <option value="3">购买者</option>
+                                </select>
+                            </div>
+                            <div class="col-6">
+                                <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                                <div class="input-group">
+                                    <input type="text" class="form-control" id="inlineFormInputGroupUsername"
+                                           placeholder="请输入">
+                                </div>
+                            </div>
+
+                            <div class="col-4">
+                                <button type="button" class="btn btn-primary">检索</button>
+                            </div>
+                        </form>
+
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">订单号</th>
+                                <th scope="col">产品名</th>
+                                <th scope="col">日期</th>
+                                <th scope="col">订购者</th>
+                                <th scope="col">状态</th>
+                                <th scope="col">数量</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+
+                    <div class="tab-pane fade" id="allIndent" role="tabpanel" aria-labelledby="profile-tab">
+                        <table class="table table-striped">
+                            <thead>
+                            <tr>
+                                <th scope="col">订单号</th>
+                                <th scope="col">产品名</th>
+                                <th scope="col">日期</th>
+                                <th scope="col">订购者</th>
+                                <th scope="col">状态</th>
+                                <th scope="col">数量</th>
+                                <th scope="col">操作</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>001</td>
+                                <td>iPhone 12 Pro Max</td>
+                                <td>2021-07-23 13:33</td>
+                                <td>风是一切的根源</td>
+                                <td>准备发货</td>
+                                <td>1</td>
+                                <td>
+                                    <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                            data-bs-target=".modifyIndentInfo">修改
+                                    </button>
+                                    <button type="button" class="btn btn-outline-danger">删除</button>
+                                </td>
+                            </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!--            分页-->
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改按钮的弹出框-->
+<div class="modal fade modifyIndentInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">修改订单信息</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <label for="indentNumber" class="col-sm-2 col-form-label">订单号</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="indentNumber">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="productName" class="col-sm-2 col-form-label">产品名</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="productName">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="date" class="col-sm-2 col-form-label">日期</label>
+                        <div class="col-sm-10">
+                            <input type="date" class="form-control" id="date">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="buyer" class="col-sm-2 col-form-label">购买者</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="buyer">
+                        </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">状态</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="one"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="one">
+                                    已出货
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="two"
+                                       value="option2">
+                                <label class="form-check-label" for="two">
+                                    已发货
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="three"
+                                       value="option2">
+                                <label class="form-check-label" for="three">
+                                    运送中
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="four"
+                                       value="option2">
+                                <label class="form-check-label" for="four">
+                                    已到达
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="five"
+                                       value="option2">
+                                <label class="form-check-label" for="five">
+                                    已退回
+                                </label>
+                            </div>
+
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-primary">修改</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+</div>
+<script src="../js/bootstrap.bundle.min.js"></script>
+<script>
+
+</script>
+</body>
+</html>
