@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
-    <link href="../css/bootstrap.min.css" rel="stylesheet">
-    <link href="../css/index.css" rel="stylesheet">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/index.css" rel="stylesheet">
     <title>index</title>
 </head>
 <body>
@@ -20,20 +20,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item">
-                        <a aria-current="page" class="nav-link active" href="#">主页</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#"></a>
-                    </li>
                     <li class="nav-item dropdown">
                         <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
                            id="navbarDropdown" role="button">
-                            其他界面
+                            其他
                         </a>
                         <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">管理</a></li>
-                            <li><a class="dropdown-item" href="#">查询</a></li>
+                            <li><a class="dropdown-item" href="#">本次课题</a></li>
                             <li>
                                 <hr class="dropdown-divider">
                             </li>
@@ -43,15 +36,28 @@
 
                 </ul>
                 <div class="d-flex">
-                    <form action="login.html">
-                        <button class="btn btn-outline-danger" id="sign-out" type="submit">退出登录</button>
-                    </form>
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Hi，管理员
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="modifyadmin.html">修改个人信息</a></li>
+                                <li><a class="dropdown-item" href="configpassword.html">修改密码</a></li>
+                                <hr>
+                                <li><a class="dropdown-item" href="login.html">退出登录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
                 </div>
 
             </div>
         </div>
     </nav>
 </div>
+
 
 <div class="container">
 
@@ -60,46 +66,22 @@
         <div class="col-3" id="sidebar">
 
             <div class="list-group" id="lists">
-                <a href="infomanage.html" class="list-group-item list-group-item-action active" aria-current="true">
-                    手机信息管理
+                <a href="viewphone.html" class="list-group-item list-group-item-action active" aria-current="true">
+                    浏览手机信息
                 </a>
-                <a href="vipmanamge.html" class="list-group-item list-group-item-action">
-                    会员管理
+                <a href="viewbrand.html" class="list-group-item list-group-item-action">
+                    查看手机手机品牌
                 </a>
-                <a href="brandmanage.html" class="list-group-item list-group-item-action">
-                    手机品牌管理
+                <a href="viewcart.html" class="list-group-item list-group-item-action">
+                    查看购物车
                 </a>
-                <a href="stockmanage.html" class="list-group-item list-group-item-action">
-                    手机数量管理
-                </a>
-                <a href="indentmanage.html" class="list-group-item list-group-item-action">
-                    订单管理
+                <a href="viewindent.html" class="list-group-item list-group-item-action">
+                    查看订单
                 </a>
             </div>
         </div>
         <!--        主内容-->
         <div class="col-9" id="content">
-            <div class="row mb-5">
-                <div class="col-12">
-                    <nav>
-                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
-                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-addPhone" type="button" aria-controls="nav-home"
-                                    aria-selected="true">
-                                添加手机信息
-                            </button>
-                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-modifyPhone"
-                                    type="button" aria-controls="nav-profile" aria-selected="false">修改手机手机信息
-                            </button>
-                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
-                                    data-bs-target="#nav-deletePhone"
-                                    type="button" aria-controls="nav-contact" aria-selected="false">删除手机信息
-                            </button>
-                        </div>
-                    </nav>
-                </div>
-            </div>
             <div class="row justify-content-center">
                 <div class="col-8" id="phoneAddGroup">
                     <div class="tab-content" id="nav-tabContent">
@@ -124,7 +106,7 @@
                                         <span class="input-group-text">手机描述</span>
                                         <textarea class="form-control" aria-label="With textarea" rows="4"></textarea>
                                     </div>
-                                        <button type="submit" class="btn btn-primary">添加</button>
+                                    <button type="submit" class="btn btn-primary">添加</button>
                                 </div>
                             </form>
                         </div>
@@ -150,12 +132,11 @@
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
 </div>
 
-<script src="../js/bootstrap.bundle.min.js"></script>
+<script src="../../js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
 

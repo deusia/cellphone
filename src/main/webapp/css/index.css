@@ -22,6 +22,11 @@ a {
 
 #lists{
     margin-top: 30px;
+
+    /*margin-top: 70px;*/
+    /*position: fixed;*/
+    /*width: 280px;*/
+
 }
 
 #form-search{
@@ -31,4 +36,31 @@ a {
 #phoneAddGroup{
     margin: auto;
 
+}
+
+#add-phone-card{
+    padding: 0;
+}
+
+#modify-card{
+    padding-left: 30px;
+    padding-right: 30px;
+}
+
+#modify-card input[type="text"]{
+    width: 270px;
+}
+
+
+#modify-card input[type="password"]{
+    width: 270px;
+}
+
+#modify-card input[type="tel"]{
+    width: 270px;
+}
+
+#config-button{
+    width: 100px;
+    margin: auto;
 }

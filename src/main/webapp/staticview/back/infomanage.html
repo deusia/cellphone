@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/index.css" rel="stylesheet">
+    <title>index</title>
+</head>
+<body>
+<div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">手机销售管理系统</a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdown" role="button">
+                            其他
+                        </a>
+                        <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">本次课题</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">关于我们</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="d-flex">
+                    <ul class="navbar-nav">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                               data-bs-toggle="dropdown" aria-expanded="false">
+                                Hi，管理员
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                                <li><a class="dropdown-item" href="modifyadmin.html">修改个人信息</a></li>
+                                <li><a class="dropdown-item" href="configpassword.html">修改密码</a></li>
+                                <hr>
+                                <li><a class="dropdown-item" href="login.html">退出登录</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-3" id="sidebar">
+
+            <div class="list-group" id="lists">
+                <a href="infomanage.html" class="list-group-item list-group-item-action active" aria-current="true">
+                    手机信息管理
+                </a>
+                <a href="vipmanamge.html" class="list-group-item list-group-item-action">
+                    会员管理
+                </a>
+                <a href="brandmanage.html" class="list-group-item list-group-item-action">
+                    手机品牌管理
+                </a>
+                <a href="indentmanage.html" class="list-group-item list-group-item-action">
+                    订单管理
+                </a>
+            </div>
+        </div>
+        <div class="col-9" id="content">
+            <div class="row">
+                <!--                    订单查询面板-->
+                <form class="row row-cols-3 align-items-center" id="form-search">
+
+                    <div class="col-2">
+                        <label class="visually-hidden" for="inlineFormSelectPref">请选择检索条件</label>
+                        <select class="form-select" id="inlineFormSelectPref">
+                            <option value="1">手机编号</option>
+                            <option value="2">名称</option>
+                        </select>
+                    </div>
+                    <div class="col-6">
+                        <label class="visually-hidden" for="inlineFormInputGroupUsername">Username</label>
+                        <div class="input-group">
+                            <input type="text" class="form-control" id="inlineFormInputGroupUsername"
+                                   placeholder="请输入">
+                        </div>
+                    </div>
+
+                    <div class="col-4">
+                        <button type="button" class="btn btn-primary">检索</button>
+                    </div>
+                </form>
+                <table class="table table-hover">
+<!--                    表头-->
+                    <thead class="table-dark">
+                    <tr>
+                        <th scope="col">编号</th>
+                        <th scope="col">名称</th>
+                        <th scope="col">描述</th>
+                        <th scope="col">数量</th>
+                        <th scope="col">状态</th>
+                        <th scope="col">操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>SJ01</td>
+                        <td>红米Note9</td>
+                        <td>4G+128G</td>
+                        <td>689</td>
+                        <td>有货</td>
+                        <td>
+                            <button type="button" class="btn btn-outline-primary" data-bs-toggle="modal"
+                                    data-bs-target=".modifyPhoneInfo">修改
+                            </button>
+                            <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"
+                                    data-bs-target=".deletePhone">删除
+                            </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+            <!--            分页-->
+            <div class="row">
+                <div class="col-8">
+                    <nav aria-label="Page navigation example">
+                        <ul class="pagination justify-content-center">
+                            <li class="page-item disabled">
+                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#">Next</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="col-4">
+                    <button class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#addPhone">添加手机信息</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--修改按钮的弹出框-->
+<div class="modal fade modifyPhoneInfo" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="staticBackdropLabel">修改订单信息</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <form>
+                <div class="modal-body">
+                    <div class="row mb-3">
+                        <label for="productName" class="col-sm-2 col-form-label">名称</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="productName">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="date" class="col-sm-2 col-form-label">描述</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="date">
+                        </div>
+                    </div>
+                    <div class="row mb-3">
+                        <label for="buyer" class="col-sm-2 col-form-label">数量</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="buyer">
+                        </div>
+                    </div>
+                    <fieldset class="row mb-3">
+                        <legend class="col-form-label col-sm-2 pt-0">状态</legend>
+                        <div class="col-sm-10">
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="one"
+                                       value="option1" checked>
+                                <label class="form-check-label" for="one">
+                                    有货
+                                </label>
+                            </div>
+                            <div class="form-check">
+                                <input class="form-check-input" type="radio" name="gridRadios" id="two"
+                                       value="option2">
+                                <label class="form-check-label" for="two">
+                                    无货
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">关闭</button>
+                    <button type="button" class="btn btn-outline-primary">修改</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--删除按钮弹出框-->
+<div class="modal fade deletePhone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="">删除警告⚠️</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                确定要手机信息吗？
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline-danger">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+<!--添加手机信息弹出框-->
+<div class="modal fade" id="addPhone" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+     aria-labelledby="staticBackdropLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">添加手机信息️</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-outline-danger">删除</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="../../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
