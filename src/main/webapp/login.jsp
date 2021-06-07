@@ -16,8 +16,8 @@
     <title>登录</title>
 </head>
 <body>
-<div class="container">
-    <form action="login" id="form" method="post">
+<div id="form">
+    <form action="login" id="loginForm" method="post">
         <div class="mb-3 ">
             <h1 align="center">欢迎使用</h1>
         </div>
@@ -66,8 +66,6 @@
 <script src="js/canvas-nest.umd.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 <script>
-
-
     function signIn() {
         var username = document.getElementById("usernameInput").value;
         var password = document.getElementById("passwordInput").value;
@@ -77,15 +75,13 @@
             var myModal = new bootstrap.Modal(document.getElementById('myModal'), {});
             myModal.toggle();
         } else {
-            document.getElementById("form").submit();
+            document.getElementById("loginForm").submit();
         }
     }
 
     function signUp() {
         window.location.href = "register.jsp";
     }
-
-
 </script>
 </body>
 </html>

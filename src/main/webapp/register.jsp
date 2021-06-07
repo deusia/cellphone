@@ -16,8 +16,8 @@
     <title>注册</title>
 </head>
 <body>
-<div class="container">
-    <form action="login.html" id="form" method="post">
+<div id="form">
+    <form action="login.html" method="post">
         <div class="mb-3 ">
             <h1 align="center">欢迎加入</h1>
         </div>
