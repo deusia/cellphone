@@ -1,6 +1,8 @@
-form {
+#form {
     width: 450px;
     margin: auto;
+    position: relative;
+    top: 200px;
 }
 
 .container {
@@ -22,6 +24,6 @@ form {
 }
 
 html, body {
-    height: 50%;
+    height: 100%;
     width: 100%;
 }

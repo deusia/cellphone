@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="zh-ch">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/index.css" rel="stylesheet">
+    <title>index</title>
+</head>
+<body>
+
+<div id="navbar">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="index.html">手机销售管理系统</a>
+            <button aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+                    class="navbar-toggler" data-bs-target="#navbarSupportedContent" data-bs-toggle="collapse"
+                    type="button">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a aria-current="page" class="nav-link active" href="#">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"></a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a aria-expanded="false" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#"
+                           id="navbarDropdown" role="button">
+                            其他界面
+                        </a>
+                        <ul aria-labelledby="navbarDropdown" class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">管理</a></li>
+                            <li><a class="dropdown-item" href="#">查询</a></li>
+                            <li>
+                                <hr class="dropdown-divider">
+                            </li>
+                            <li><a class="dropdown-item" href="#">关于我们</a></li>
+                        </ul>
+                    </li>
+
+                </ul>
+                <div class="d-flex">
+                    <form action="login.html">
+                        <button class="btn btn-outline-danger" id="sign-out" type="submit">退出登录</button>
+                    </form>
+                </div>
+
+            </div>
+        </div>
+    </nav>
+</div>
+
+<div class="container">
+
+    <div class="row">
+        <!--        侧边栏-->
+        <div class="col-3" id="sidebar">
+
+            <div class="list-group" id="lists">
+                <a href="infomanage.html" class="list-group-item list-group-item-action active" aria-current="true">
+                    手机信息管理
+                </a>
+                <a href="vipmanamge.html" class="list-group-item list-group-item-action">
+                    会员管理
+                </a>
+                <a href="brandmanage.html" class="list-group-item list-group-item-action">
+                    手机品牌管理
+                </a>
+                <a href="stockmanage.html" class="list-group-item list-group-item-action">
+                    手机数量管理
+                </a>
+                <a href="indentmanage.html" class="list-group-item list-group-item-action">
+                    订单管理
+                </a>
+            </div>
+        </div>
+        <!--        主内容-->
+        <div class="col-9" id="content">
+            <div class="row mb-5">
+                <div class="col-12">
+                    <nav>
+                        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                            <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-addPhone" type="button" aria-controls="nav-home"
+                                    aria-selected="true">
+                                添加手机信息
+                            </button>
+                            <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-modifyPhone"
+                                    type="button" aria-controls="nav-profile" aria-selected="false">修改手机手机信息
+                            </button>
+                            <button class="nav-link" id="nav-contact-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-deletePhone"
+                                    type="button" aria-controls="nav-contact" aria-selected="false">删除手机信息
+                            </button>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-8" id="phoneAddGroup">
+                    <div class="tab-content" id="nav-tabContent">
+                        <div class="tab-pane fade show active" id="nav-addPhone" role="tabpanel"
+                             aria-labelledby="nav-home-tab">
+                            <form action="">
+                                <div class="row justify-content-center">
+                                    <div class="mb-3">
+                                        <label for="phoneName" class="form-label">手机名称</label>
+                                        <input type="text" class="form-control" id="phoneName"
+                                               aria-describedby="emailHelp">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phoneBrand" class="form-label">手机品牌</label>
+                                        <input type="text" class="form-control" id="phoneBrand">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="phoneDescription" class="form-label">手机品牌</label>
+                                        <input type="text" class="form-control" id="phoneDescription">
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <span class="input-group-text">手机描述</span>
+                                        <textarea class="form-control" aria-label="With textarea" rows="4"></textarea>
+                                    </div>
+                                        <button type="submit" class="btn btn-primary">添加</button>
+                                </div>
+                            </form>
+                        </div>
+                        <div class="tab-pane fade" id="nav-modifyPhone" role="tabpanel"
+                             aria-labelledby="nav-profile-tab">
+                            <div class="row justify-content-center">
+                                <div class="col-8">
+                                    <div class="card text-dark bg-light mb-3">
+                                        <div class="card-header"></div>
+                                        <div class="card-body">
+                                            <h5 class="card-title">Light card title</h5>
+                                            <p class="card-text">Some quick example text to build on the card title and
+                                                make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="tab-pane fade" id="nav-deletePhone" role="tabpanel"
+                             aria-labelledby="nav-contact-tab">...
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<script src="../js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
